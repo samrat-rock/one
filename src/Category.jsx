@@ -1,32 +1,25 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { Products } from "./Data";
+import React from 'react'
+import { Products } from './Data'
 
-function Category() {
-  const { categoryName } = useParams();
-
-  const filteredProducts = Products.filter(
-    (product) => product.category === categoryName
-  );
-
+function Category1() {
+    let ccc=Products.filter((a)=>a.category=='electronics')
   return (
-    <section>
-      <div className="container">
-        <h2>{categoryName} Products</h2>
+    <>
+      <section className='container'>
+        <h2>category</h2>
         <div className="row">
-          {filteredProducts.map((product) => (
-            <div className="col-lg-3" key={product.id}>
-              <div className="shadow p-2 border">
-                <img className="w-100" src={product.image} alt={product.title} />
-                <p>{product.title}</p>
-                <p>{product.price}</p>
-              </div>
-            </div>
-          ))}
+            {ccc.map((a)=>(
+                <div className='col-lg-3'>
+                    <div className="shadow p-2">
+                        <img className='w-100' src={a.image} alt="" />
+                        <h4>{a.title}</h4>
+                    </div>
+                </div>
+            ))}
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    </>
+  )
 }
 
-export default Category;
+export default Category1

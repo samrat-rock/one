@@ -1,4 +1,7 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Category1 from './Category'
+import Home from './Home'
 
 function Header() {
   return (
@@ -18,7 +21,7 @@ function Header() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <a className="nav-link active">Home</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Link</a>
@@ -46,6 +49,10 @@ function Header() {
   </div>
 </nav>
 
+<Routes>
+    <Route path='/'element={<Home/>}/>
+    <Route path='/category/:cid/' element={<Category1/>}/>
+</Routes>
     </>
   )
 }
